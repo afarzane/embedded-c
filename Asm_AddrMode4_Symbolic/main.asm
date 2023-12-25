@@ -31,6 +31,10 @@ main:
 			mov.w	Const2,		R5
 			mov.w	R5,			Var2		; Copy contents of Const2 into Var2
 
+			mov.w	Const1,		Var1		; Copy contents of Const1 straight into Var1
+
+			mov.w	Const2,		Var2		; Copy contents of Const2 straight into Var2
+
 			jmp 	main
 
 ;-------------------------------------------------------------------------------
