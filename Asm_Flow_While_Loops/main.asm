@@ -24,23 +24,16 @@ StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
 ; Main loop here
 ;-------------------------------------------------------------------------------
 
-init:
-		mov.w	#0,	R4
-		mov.w	#0,	R5
-
 while1:	; while(Var == 3)
-		cmp.w	R4,	Var1					; Var1 - 3 = ?
-		jz		end_while1
+		cmp.w	#3,	Var1					; Var1 - 3 = ?
+		jnz		end_while1
 
-		inc		R4
+		mov.w	#1,	Var2
 		jmp		while1
 end_while1:
 
 while2:
-		cmp.w	R5,	Var2					; Var1 - 3 = ?
-		jz		end_while2
-
-		incd	R5
+		mov.w	#2,	Var2
 		jmp		while2
 end_while2:
 
